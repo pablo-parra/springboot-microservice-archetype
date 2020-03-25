@@ -1,0 +1,54 @@
+<archetype-descriptor xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
+  name="ms-archetype" partial="false" >
+  <requiredProperties>
+    <requiredProperty key="groupId" >
+      <defaultValue/>
+      <!-- <validationRegex/> -->
+    </requiredProperty>
+	<requiredProperty key="artifactId" >
+      <defaultValue/>
+      <!-- <validationRegex/> -->
+    </requiredProperty>
+	<requiredProperty key="version" >
+      <defaultValue>1.0.0-SNAPSHOT</defaultValue>
+      <!-- <validationRegex/> -->
+    </requiredProperty>
+	<requiredProperty key="appName" >
+      <validationRegex>(^[A-Z])[a-z-A-Z]*$</validationRegex>
+    </requiredProperty>
+	<requiredProperty key="k8s-namespace" >
+    </requiredProperty>
+  </requiredProperties>
+ 
+  <fileSets>
+    <!-- <fileSet filtered="true" packaged="true" encoding="utf8" >
+      <directory>src/</directory>
+      <includes/>
+      <excludes/>
+    </fileSet> -->
+	<fileSet filtered="true" packaged="true">
+		<directory>src/main/java</directory>
+    </fileSet>
+	<fileSet filtered="true" packaged="false">
+		<directory>src/main/resources</directory>
+    </fileSet>
+    <fileSet filtered="true" packaged="true">
+		<directory>src/test/java</directory>
+    </fileSet>
+	<fileSet filtered="true" packaged="false">
+		<directory>src/test/resources</directory>
+    </fileSet>
+	<fileSet filtered="true" packaged="false" encoding="utf8" >
+      <directory>k8s/</directory>
+      <includes/>
+      <excludes/>
+    </fileSet>
+	<fileSet filtered="true" packaged="false" encoding="utf8" >
+      <directory>docker/</directory>
+      <includes/>
+      <excludes/>
+    </fileSet>
+  </fileSets>
+ 
+</archetype-descriptor>

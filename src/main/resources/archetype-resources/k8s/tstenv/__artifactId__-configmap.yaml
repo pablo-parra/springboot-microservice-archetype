@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: customereligible-configmap
+  namespace: contact-details
+data:
+  database-kube-srv: 10.0.69.9:3306
